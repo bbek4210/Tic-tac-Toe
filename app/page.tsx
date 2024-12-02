@@ -79,13 +79,7 @@ const page = () => {
           </h1>
         )}
 
-        {/* <button
-          className="px-4 py-2 border-2  border-red-500 text-red-500 font-semibold rounded hover:bg-red-500 hover:text-white transition-colors duration-300"
-          type="button"
-          onClick={handleChangePlayer}
-        >
-          Change player
-        </button> */}
+      
 
         <button
           className="px-4 py-2 border-2 border-yellow-400 text-yellow-400 font-semibold rounded hover:bg-yellow-400 hover:text-white transition-colors duration-300"
@@ -99,3 +93,4 @@ const page = () => {
 };
 
 export default page;
+
