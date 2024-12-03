@@ -29,6 +29,10 @@ const page = () => {
     return null;
   };
 
+  const isBoardFull = () => {
+    return value.every((square) => square !== null);
+  };
+
   const handleClick = (index: number) => {
     if (value[index] === null && !winner && !isDraw) {
       const updateValue = [...value];
@@ -46,17 +50,13 @@ const page = () => {
     setWinner(null);
   };
 
-  const isBoardFull = () => {
-    return value.every((square) => square !== null);
-  };
-
   useEffect(() => {
     const newWinner = checkWinner();
     if (newWinner) {
       setWinner(newWinner);
     } else if (isBoardFull()) {
       setIsDraw(true);
-      setIsDraw(false);
+      // setIsDraw(false);
     }
   });
 
@@ -71,15 +71,13 @@ const page = () => {
             {winner}
           </h2>
         ) : isDraw ? (
-          <h1 className="text-xl font-semibold text-orange-500">Match Draw</h1>
+          <h2 className="text-xl font-semibold text-orange-500">Match Draw</h2>
         ) : (
-          <h1 className="text-xl font-semibold text-blue-700">
+          <h2 className="text-xl font-semibold text-blue-700">
             Player Turn :{"  "}
             {currentPlayer}
-          </h1>
+          </h2>
         )}
-
-      
 
         <button
           className="px-4 py-2 border-2 border-yellow-400 text-yellow-400 font-semibold rounded hover:bg-yellow-400 hover:text-white transition-colors duration-300"
@@ -93,4 +91,3 @@ const page = () => {
 };
 
 export default page;
-
