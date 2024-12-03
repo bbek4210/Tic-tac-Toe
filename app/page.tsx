@@ -48,6 +48,7 @@ const page = () => {
   const hanldeNewGame = () => {
     setValue(Array(9).fill(null));
     setWinner(null);
+    setIsDraw(false);
   };
 
   useEffect(() => {
@@ -56,7 +57,6 @@ const page = () => {
       setWinner(newWinner);
     } else if (isBoardFull()) {
       setIsDraw(true);
-      // setIsDraw(false);
     }
   });
 
